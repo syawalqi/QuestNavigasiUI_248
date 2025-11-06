@@ -46,3 +46,14 @@ fun TampilData(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = onBackBtnClick
+            ) {
+                Text(text = stringResource(id = R.string.back))
+            }
+        }
+    }
+}
