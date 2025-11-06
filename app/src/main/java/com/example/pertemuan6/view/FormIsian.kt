@@ -40,5 +40,13 @@ fun FormIsian(
                 thickness = 1.dp,
                 color = Color.Red
             )
+            Row {
+                jenisK.forEach { item ->
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(selected = false, onClick = {})
+                        Text(text = item)
+                    }
+                }
+            }
 
 }
