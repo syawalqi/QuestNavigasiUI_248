@@ -40,5 +40,5 @@ fun DataApp(
 private fun cancelAndBackToFormulir(
     navController: NavController
 ){
-    navController.popBackStack()
+    navController.popBackStack(Navigasi.Formulir.name, inclusive = false)
 }
