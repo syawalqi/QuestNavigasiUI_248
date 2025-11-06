@@ -1,13 +1,16 @@
 package com.example.pertemuan6
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
+import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import java.lang.reflect.Modifier
 import androidx.navigation.compose.NavHost
-import com.example.pertemuan6.view.FormIsian
+import androidx.navigation.compose.composable
 import com.example.pertemuan6.view.TampilData
+import com.example.pertemuan6.view.FormIsian
+
 
 enum class Navigasi{
     Formulir,
@@ -15,36 +18,34 @@ enum class Navigasi{
 }
 
 @Composable
-fun DataApp(
-    navController: NavController = rememberNavController(),
+fun DataApp (
+    navController: NavHostController = rememberNavController(),
     modifier: Modifier
-){
-    Scaffold { isiRuang->
+) {
+    Scaffold { isiRuang ->
         NavHost(
             navController = navController,
             startDestination = Navigasi.Formulir.name,
 
-            modifier = Modifier.padding(isiRuang)){
-            composable(route = Navigasi.Formulir.name){
+            modifier = Modifier.padding(isiRuang)) {
+            composable(route = Navigasi.Formulir.name) {
                 FormIsian(
-                    OnsubmitBtnClick = {
+                    //pilihanJK = JenisK.map { id -> context.resources.getString(id) },
+                    OnSubmitBtnClick = {
                         navController.navigate(Navigasi.Detail.name)
                     }
                 )
             }
-            composable(route = Navigasi.Detail.name){
+            composable(route = Navigasi.Detail.name) {
                 TampilData(
-                    onBackBtnClick = {cancelAndBackToFormulir(navController)}
+                    onBackBtnClick = { cancelAndBackToFormulir(navController) }
                 )
             }
         }
     }
 }
 
-fun composable(route: String, function: Any) {}
 
-private fun cancelAndBackToFormulir(
-    navController: NavController
-){
+private fun cancelAndBackToFormulir(navController: NavHostController) {
     navController.popBackStack(Navigasi.Formulir.name, inclusive = false)
 }
