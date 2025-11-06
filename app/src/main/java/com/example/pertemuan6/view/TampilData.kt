@@ -3,3 +3,6 @@ package com.example.pertemuan6.view
 
 
 @Composable
+fun TampilData(
+    onBackBtnClick: () -> Unit
+)
