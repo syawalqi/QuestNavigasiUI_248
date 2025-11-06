@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import java.lang.reflect.Modifier
+import androidx.navigation.compose.NavHost
 
 enum class Navigasi{
     Formulir,
@@ -37,6 +38,9 @@ fun DataApp(
         }
     }
 }
+
+fun composable(route: String, function: Any) {}
+
 private fun cancelAndBackToFormulir(
     navController: NavController
 ){
