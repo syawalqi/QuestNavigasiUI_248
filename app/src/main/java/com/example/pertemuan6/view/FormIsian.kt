@@ -18,4 +18,10 @@ fun FormIsian(
             )
         }
     )
+    { paddingValues ->
+        Column(
+            modifier = Modifier.padding(paddingValues),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
 }
