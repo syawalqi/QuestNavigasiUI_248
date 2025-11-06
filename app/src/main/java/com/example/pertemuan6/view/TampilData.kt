@@ -21,4 +21,8 @@ fun TampilData(
                 )
             )
         }
-    )
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier.padding(paddingValues),
+            verticalArrangement = Arrangement.SpaceBetween
+        )
