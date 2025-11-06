@@ -1,4 +1,7 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.example.pertemuan6.view
+
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
